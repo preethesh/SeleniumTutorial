@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="test suite" duration-ms="142355" started-at="2018-08-12T07:54:09Z" finished-at="2018-08-12T07:56:32Z">
+    <groups>
+    </groups>
+    <test name="test" duration-ms="142355" started-at="2018-08-12T07:54:09Z" finished-at="2018-08-12T07:56:32Z">
+      <class name="com.selenium.test.phpTravels.OptionListFromNavBar">
+        <test-method status="PASS" signature="test()[pri:0, instance:com.selenium.test.phpTravels.OptionListFromNavBar@129a8472]" name="test" is-config="true" duration-ms="135789" started-at="2018-08-12T13:24:09Z" finished-at="2018-08-12T13:26:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="getTheOptionListFromMainPage()[pri:0, instance:com.selenium.test.phpTravels.OptionListFromNavBar@129a8472]" name="getTheOptionListFromMainPage" duration-ms="2803" started-at="2018-08-12T13:26:25Z" finished-at="2018-08-12T13:26:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTheOptionListFromMainPage -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.selenium.test.phpTravels.OptionListFromNavBar@129a8472]" name="tearDown" is-config="true" duration-ms="1904" started-at="2018-08-12T13:26:28Z" finished-at="2018-08-12T13:26:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getTheOptionListFromMainPage status=SUCCESS method=OptionListFromNavBar.getTheOptionListFromMainPage()[pri:0, instance:com.selenium.test.phpTravels.OptionListFromNavBar@129a8472] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.selenium.test.phpTravels.OptionListFromNavBar@129a8472]" name="quit" is-config="true" duration-ms="1404" started-at="2018-08-12T13:26:30Z" finished-at="2018-08-12T13:26:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com.selenium.test.phpTravels.OptionListFromNavBar -->
+    </test> <!-- test -->
+  </suite> <!-- test suite -->
+</testng-results>

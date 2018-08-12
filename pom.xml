@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.auto.selenium</groupId>
+    <artifactId>com.auto.selenium</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.44.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.11</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.15</version>
+        </dependency>
+
+    </dependencies>
+
+
+
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                <source>1.5</source>
+                <target>1.5</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <inherited>true</inherited>
+                <configuration>
+                <suiteXmlFiles>
+                <suiteXmlFile> testng.xml </suiteXmlFile>
+            </suiteXmlFiles>
+                <testFailureIgnore>true</testFailureIgnore>
+            </configuration>
+            </plugin>
+
+            <!-- maven postman plugin -->
+            <plugin>
+
+                <groupId>ch.fortysix</groupId>
+                <artifactId>maven-postman-plugin</artifactId>
+                <version>0.1.6</version>
+                <executions>
+                <execution>
+                <id>Report Generation</id>
+                <phase>test</phase>
+                <goals>
+                <goal>send-mail</goal>
+            </goals>
+                <inherited>true</inherited>
+                <configuration>
+                <!-- From Email address -->
+                <from>joe.preethesh29@gmail.com</from>
+                <!-- Email subject -->
+                <subject>Cucumber Test Automation Report</subject>
+                <!-- Fail the build if the mail doesn't reach -->
+                <failonerror>false</failonerror>
+                <!-- Email Body Content -->
+                <htmlMessage>
+                <![CDATA[ <p>New test build triggered!</p> <p>Attached html file contains the test result status</p> ]]>
+            </htmlMessage>
+                <!-- host -->
+                <mailhost>smtp.gmail.com</mailhost>
+                <!-- port of the host -->
+                <mailport>465</mailport>
+                <mailssl>true</mailssl>
+                <mailAltConfig>true</mailAltConfig>
+                <!-- Email Authentication(Username and Password) -->
+                <mailuser>joe.preethesh29@gmail.com</mailuser>
+                <mailpassword>munna@29</mailpassword>
+                <receivers>
+                <!-- To Email address -->
+                <receiver>jnoronha@atimi.com</receiver>
+            </receivers>
+                    <fileSets>
+                        <fileSet>
+
+                <!-- Report directory Path -->
+                <directory>${basedir}/target/surefire-reports</directory>
+                <includes>
+                <!-- Report file name -->
+                <include>index.html</include>
+            </includes>
+            </fileSet>
+            </fileSets>
+            </configuration>
+            </execution>
+            </executions>
+            </plugin>
+            <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <executions>
+            <execution>
+            <goals>
+            <goal>java</goal>
+        </goals>
+        </execution>
+        </executions>
+            <configuration>
+            <classpathScope>test</classpathScope>
+        </configuration>
+        </plugin>
+        </plugins>
+    </build>
+</project>
